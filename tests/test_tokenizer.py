@@ -7,6 +7,7 @@ import os
 import tempfile
 
 import pytest
+
 from mini_gpt.tokenizer import BPETokenizer, CharacterTokenizer, SimpleTokenizer
 from mini_gpt.utils import load_sample_vocab
 
