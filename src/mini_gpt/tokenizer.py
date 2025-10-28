@@ -11,7 +11,7 @@ Both are designed for educational purposes with clear, well-commented code.
 
 import json
 from collections import Counter, defaultdict
-from typing import Dict, List, Optional, Tuple
+from typing import Counter, Dict, List, Optional, Set, Tuple
 
 # Special tokens used across all tokenizers
 UNK_TOKEN = "<UNK>"
@@ -356,7 +356,7 @@ class BPETokenizer:
     def _initialize_character_tokens(self) -> None:
         """Initialize vocabulary with all unique characters."""
         # Get all unique characters from the corpus
-        chars: set[str] = set()
+        chars: Set[str] = set()
         for word in self.word_freqs.keys():
             chars.update(word)
 
