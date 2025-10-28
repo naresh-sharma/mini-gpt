@@ -1,0 +1,16 @@
+# Part 1: Tokenization dependencies
+numpy>=1.24.0
+jupyter>=1.0.0
+tiktoken>=0.4.0
+tqdm>=4.65.0
+
+# Development dependencies
+pytest>=7.0.0
+black>=23.0.0
+mypy>=1.0.0
+
+# TODO: Add in Part 4 (Training)
+# torch>=2.0.0
+# matplotlib>=3.7.0
+# seaborn>=0.12.0
+# plotly>=5.14.0
