@@ -25,7 +25,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}-${{ hashFiles('**/setup.py') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     
@@ -35,6 +35,8 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-dev.txt
         pip install -e ".[dev]"
+        # Ensure Black is not installed (it conflicts with Ruff)
+        pip uninstall black -y || true
     
     - name: Lint and format with Ruff
       run: |
