@@ -3,7 +3,6 @@
 
 # Code quality and formatting
 ruff>=0.14.0
-black>=23.0.0
 mypy>=1.0.0
 
 # Testing

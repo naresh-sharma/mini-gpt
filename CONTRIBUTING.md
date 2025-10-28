@@ -158,7 +158,7 @@ pytest tests/ -v               # Run tests
 - [ ] Make your changes
 - [ ] Add tests for new functionality
 - [ ] Ensure all tests pass (`pytest`)
-- [ ] Run code formatting (`black .` and `isort .`)
+- [ ] Run code formatting (`ruff format .`)
 - [ ] Update documentation if needed
 - [ ] Commit your changes (`git commit -m 'Add amazing feature'`)
 - [ ] Push to your branch (`git push origin feature/amazing-feature`)
@@ -181,7 +181,7 @@ pytest tests/ -v               # Run tests
 
 ### Python Code
 - Follow [PEP 8](https://pep8.org/) style guidelines
-- Use [Black](https://black.readthedocs.io/) for code formatting
+- Use [Ruff](https://docs.astral.sh/ruff/) for code formatting and linting
 - Use [isort](https://pycqa.github.io/isort/) for import sorting
 - Maximum line length: 100 characters
 - Use type hints where appropriate
@@ -189,7 +189,7 @@ pytest tests/ -v               # Run tests
 ### Formatting Commands
 ```bash
 # Format code
-black .
+ruff format .
 
 # Sort imports
 isort .
