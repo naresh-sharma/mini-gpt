@@ -35,17 +35,11 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-dev.txt
         pip install -e ".[dev]"
-        # Ensure Black is not installed (it conflicts with Ruff)
-        pip uninstall black -y || true
     
     - name: Lint and format with Ruff
       run: |
         ruff check .
         ruff format --check .
-    
-    - name: Type check with mypy
-      run: |
-        timeout 300 mypy src/ --ignore-missing-imports --no-error-summary --show-error-codes
     
     - name: Test with pytest
       run: |

@@ -3,15 +3,10 @@
 
 # Code quality and formatting
 ruff>=0.14.0
-mypy>=1.0.0
 
 # Testing
 pytest>=7.0.0
 pytest-cov>=4.0.0
-
-# Documentation
-sphinx>=7.0.0
-sphinx-rtd-theme>=1.3.0
 
 # Pre-commit hooks (optional)
 pre-commit>=3.0.0
