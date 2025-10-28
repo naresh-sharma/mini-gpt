@@ -11,7 +11,7 @@ Both are designed for educational purposes with clear, well-commented code.
 
 import json
 from collections import Counter, defaultdict
-from typing import Counter, Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 # Special tokens used across all tokenizers
 UNK_TOKEN = "<UNK>"
