@@ -14,7 +14,7 @@ Part 5: Training & Generation - Making your GPT talk
 
 __version__ = "0.1.0"
 __author__ = "Naresh Sharma"
-__email__ = "[your-email@example.com]"
+__email__ = "nareshsharman@gmail.com"
 __description__ = "Build GPT from scratch to understand how LLMs work"
 __license__ = "MIT"
 

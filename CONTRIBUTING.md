@@ -16,7 +16,7 @@ Thank you for your interest in contributing to MiniGPT! This project is designed
 
 ## 🤝 Code of Conduct
 
-This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [your-email@example.com].
+This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to nareshsharman@gmail.com.
 
 ## 🎯 How Can I Contribute?
 
@@ -113,7 +113,42 @@ Never contributed to open source before? No problem! Here are some good first is
    pytest
    ```
 
+6. **Set up pre-commit hooks (recommended)**
+   ```bash
+   # Install pre-commit
+   pip install pre-commit
+   
+   # Install hooks
+   pre-commit install
+   
+   # Run on all files (optional)
+   pre-commit run --all-files
+   ```
+
 **Pro tip:** Always activate your venv before working! You should see `(venv)` in your terminal prompt.
+
+### 🔍 Pre-commit Checks
+
+This project uses pre-commit hooks to ensure code quality. The hooks run automatically before each commit and include:
+
+- **Ruff**: Linting and formatting
+- **MyPy**: Type checking  
+- **Pytest**: Running tests
+
+**Manual checks:**
+```bash
+# Quick way - run all checks
+./scripts/pre-commit.sh
+
+# Or manually
+pre-commit run --all-files
+
+# Individual checks
+ruff check .                    # Lint code
+ruff format .                   # Format code  
+mypy src/ --ignore-missing-imports  # Type check
+pytest tests/ -v               # Run tests
+```
 
 ## 🔄 Pull Request Process
 
@@ -312,8 +347,8 @@ Remember: This project is educational! When contributing:
 
 - 💬 **Discussions**: Use GitHub Discussions for questions
 - 🐛 **Issues**: Use Issues for bugs and feature requests
-- 📧 **Email**: [your-email@example.com] for private matters
-- 💼 **LinkedIn**: [Your Name](https://linkedin.com/in/yourusername)
+- 📧 **Email**: nareshsharman@gmail.com for private matters
+- 💼 **LinkedIn**: [Naresh Sharma](https://linkedin.com/in/naresh-sharma-865b3b24/)
 
 ## 🙏 Recognition
 

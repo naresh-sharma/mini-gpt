@@ -143,8 +143,8 @@ For faster training:
 
 - 💬 [GitHub Discussions](https://github.com/naresh-sharma/mini-gpt/discussions)
 - 🐛 [GitHub Issues](https://github.com/naresh-sharma/mini-gpt/issues)
-- 📧 Email: [your-email@example.com]
-- 💼 [LinkedIn](https://linkedin.com/in/yourusername)
+- 📧 Email: nareshsharman@gmail.com
+- 💼 [LinkedIn](https://linkedin.com/in/naresh-sharma-865b3b24/)
 
 ### How do I report a bug?
 

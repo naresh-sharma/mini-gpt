@@ -503,16 +503,16 @@ def load_text_data(filepath: str) -> str:
     Example:
         >>> text = load_text_data("data/tiny_shakespeare.txt")
     """
-    filepath = Path(filepath)
+    path = Path(filepath)
 
-    if not filepath.exists():
-        raise FileNotFoundError(f"File not found: {filepath}")
+    if not path.exists():
+        raise FileNotFoundError(f"File not found: {path}")
 
     try:
-        with open(filepath, encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             return f.read()
     except UnicodeDecodeError as e:
-        raise ValueError(f"File encoding error. Expected UTF-8: {filepath}\nError: {str(e)}") from e
+        raise ValueError(f"File encoding error. Expected UTF-8: {path}\nError: {str(e)}") from e
 
 
 def save_text_data(text: str, filepath: str) -> None:
@@ -528,12 +528,12 @@ def save_text_data(text: str, filepath: str) -> None:
     Example:
         >>> save_text_data("Hello world!", "output/test.txt")
     """
-    filepath = Path(filepath)
+    path = Path(filepath)
 
     # Create parent directories if needed
-    filepath.parent.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(filepath, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8") as f:
         f.write(text)
 
 

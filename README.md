@@ -25,7 +25,7 @@
 >>> vocab = load_sample_vocab("simple")
 >>> tokenizer = SimpleTokenizer(vocab)
 >>> tokenizer.encode("Hello world!")
-[102, 103, 104]
+[6, 7, 8]
 ```
 
 *Learn why it works this way in Part 1!*
@@ -163,13 +163,29 @@ python
 >>> vocab = load_sample_vocab("simple")
 >>> tokenizer = SimpleTokenizer(vocab)
 >>> print(tokenizer.encode("Hello world!"))
+[6, 7, 8]
 ```
 
-### Option 3: Pip Install
+### Option 3: Pip Install (Coming Soon)
 ```bash
 pip install mini-gpt
 ```
-*Coming soon to PyPI. For now, clone and install locally.*
+*PyPI package coming soon! For now, clone and install locally using the steps above.*
+
+## 💡 Examples
+
+Try these example scripts to see MiniGPT in action:
+
+```bash
+# Interactive tokenizer demo
+python examples/tokenizer_demo.py
+
+# Basic usage examples  
+python examples/basic_usage.py
+
+# Compare with OpenAI's tokenizer
+python examples/compare_with_tiktoken.py
+```
 
 ## 👥 Who Is This For?
 
@@ -213,6 +229,9 @@ mini-gpt/
 ├── 🧪 tests/               # Unit tests
 ├── 📚 docs/                # Additional documentation
 └── 💡 examples/            # Example scripts
+    ├── tokenizer_demo.py   # Interactive tokenizer demo
+    ├── basic_usage.py      # Simple usage examples
+    └── compare_with_tiktoken.py  # Compare with OpenAI's tokenizer
 ```
 
 ## 🎯 Code Philosophy
@@ -254,10 +273,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Connect
 
-- 📧 Email: [your-email@example.com]
-- 🐦 Twitter: [@yourusername]
-- 💼 LinkedIn: [Your Name](https://linkedin.com/in/yourusername)
-- 🌐 Blog: [your-blog-url]
+- 📧 Email: nareshsharman@gmail.com
+- 🐦 Twitter: [@Naresh_Sharma_](https://x.com/Naresh_Sharma_)
+- 💼 LinkedIn: [Naresh Sharma](https://linkedin.com/in/naresh-sharma-865b3b24/)
+- 🌐 Blog: [Async Thinking](https://asyncthinking.com)
 
 ## 🚀 Ready to Start?
 

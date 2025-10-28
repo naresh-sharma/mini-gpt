@@ -188,8 +188,8 @@ Project roadmap and development timeline for MiniGPT.
 ### How to Provide Feedback
 - [GitHub Issues](https://github.com/naresh-sharma/mini-gpt/issues) for bugs and feature requests
 - [GitHub Discussions](https://github.com/naresh-sharma/mini-gpt/discussions) for general feedback
-- [Email](mailto:[your-email@example.com]) for private feedback
-- [LinkedIn](https://linkedin.com/in/yourusername) for professional discussions
+- [Email](mailto:nareshsharman@gmail.com) for private feedback
+- [LinkedIn](https://linkedin.com/in/naresh-sharma-865b3b24/) for professional discussions
 
 ### What We're Looking For
 - Educational value and clarity

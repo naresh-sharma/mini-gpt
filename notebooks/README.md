@@ -127,7 +127,7 @@ visualize_tokens(text, tokenizer)
 ### 📖 Option 3: Read the Blog Post
 
 For detailed explanations with visuals:
-- [Part 1: How GPT Reads Your Words](your-blog-link) (Coming Soon)
+- [Part 1: How GPT Reads Your Words](https://asyncthinking.com) (Coming Soon)
 
 ## 📅 Notebook Roadmap
 
@@ -146,7 +146,7 @@ For detailed explanations with visuals:
 Interested in contributing to the notebooks? 
 
 - Check out our [Contributing Guide](../CONTRIBUTING.md)
-- Share what you'd like to see in the notebooks via [Discussions](https://github.com/[yourusername]/mini-gpt/discussions)
+- Share what you'd like to see in the notebooks via [Discussions](https://github.com/naresh-sharma/mini-gpt/discussions)
 
 ## 💡 Why Python Examples First?
 
@@ -160,9 +160,9 @@ Think of it as: **Code first, notebooks second** 🚀
 
 ## 📞 Questions?
 
-- 💬 [Start a Discussion](https://github.com/[yourusername]/mini-gpt/discussions)
-- 🐛 [Report an Issue](https://github.com/[yourusername]/mini-gpt/issues)
-- 📧 Email: [your-email]
+- 💬 [Start a Discussion](https://github.com/naresh-sharma/mini-gpt/discussions)
+- 🐛 [Report an Issue](https://github.com/naresh-sharma/mini-gpt/issues)
+- 📧 Email: nareshsharman@gmail.com
 
 ---
 

@@ -19,7 +19,8 @@ def main():
 
     # Example of what the final usage will look like:
     print("\n📝 Future usage will look like this:")
-    print("""
+    print(
+        """
     # Load tokenizer
     tokenizer = CharacterTokenizer()
 
@@ -30,7 +31,8 @@ def main():
     prompt = "The future of AI is"
     generated = model.generate(prompt, max_length=50)
     print(f"Generated: {generated}")
-    """)
+    """
+    )
 
 
 if __name__ == "__main__":

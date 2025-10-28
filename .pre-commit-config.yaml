@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.8
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        args: [src/, --ignore-missing-imports]
+        pass_filenames: false
+        always_run: true
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        args: [tests/, -v]
+        pass_filenames: false
+        always_run: true
+
+  - repo: local
+    hooks:
+      - id: demo-check
+        name: demo-check
+        entry: python
+        language: system
+        args: [examples/tokenizer_demo.py]
+        pass_filenames: false
+        always_run: true
+        stages: [manual]

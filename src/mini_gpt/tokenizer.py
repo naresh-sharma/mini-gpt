@@ -273,10 +273,10 @@ class BPETokenizer:
             raise ValueError(f"vocab_size must be between {MIN_VOCAB_SIZE} and {MAX_VOCAB_SIZE}")
 
         self.vocab_size = vocab_size
-        self.vocab = {}
-        self.reverse_vocab = {}
-        self.merges = []  # List of (token1, token2) pairs that were merged
-        self.word_freqs = Counter()
+        self.vocab: Dict[str, int] = {}
+        self.reverse_vocab: Dict[int, str] = {}
+        self.merges: List[Tuple[str, str]] = []  # List of (token1, token2) pairs that were merged
+        self.word_freqs: Counter[str] = Counter()
 
         # Initialize with special tokens
         self._add_special_tokens()
@@ -329,7 +329,7 @@ class BPETokenizer:
                 break  # No more pairs to merge
 
             # Get most frequent pair
-            most_frequent_pair = max(pair_freq, key=pair_freq.get)
+            most_frequent_pair = max(pair_freq, key=lambda x: pair_freq[x])
 
             # Merge the pair
             self._merge_pair(most_frequent_pair)
@@ -356,7 +356,7 @@ class BPETokenizer:
     def _initialize_character_tokens(self) -> None:
         """Initialize vocabulary with all unique characters."""
         # Get all unique characters from the corpus
-        chars = set()
+        chars: set[str] = set()
         for word in self.word_freqs.keys():
             chars.update(word)
 
@@ -368,7 +368,7 @@ class BPETokenizer:
 
     def _count_pairs(self) -> Dict[Tuple[str, str], int]:
         """Count frequency of adjacent token pairs."""
-        pair_freq = defaultdict(int)
+        pair_freq: Dict[Tuple[str, str], int] = defaultdict(int)
 
         for word, freq in self.word_freqs.items():
             # Split word into current tokens
