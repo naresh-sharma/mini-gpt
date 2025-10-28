@@ -45,7 +45,7 @@ jobs:
     
     - name: Type check with mypy
       run: |
-        mypy src/ --ignore-missing-imports
+        timeout 300 mypy src/ --ignore-missing-imports --no-error-summary --show-error-codes
     
     - name: Test with pytest
       run: |
