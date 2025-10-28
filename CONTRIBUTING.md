@@ -16,7 +16,7 @@ Thank you for your interest in contributing to MiniGPT! This project is designed
 
 ## 🤝 Code of Conduct
 
-This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to nareshsharman@gmail.com.
+This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to asyncthinking@gmail.com.
 
 ## 🎯 How Can I Contribute?
 
@@ -347,7 +347,7 @@ Remember: This project is educational! When contributing:
 
 - 💬 **Discussions**: Use GitHub Discussions for questions
 - 🐛 **Issues**: Use Issues for bugs and feature requests
-- 📧 **Email**: nareshsharman@gmail.com for private matters
+- 📧 **Email**: asyncthinking@gmail.com for private matters
 - 💼 **LinkedIn**: [Naresh Sharma](https://linkedin.com/in/naresh-sharma-865b3b24/)
 
 ## 🙏 Recognition

@@ -30,7 +30,7 @@ setup(
     name="mini-gpt",
     version="0.1.0",
     author="Naresh Sharma",
-    author_email="nareshsharman@gmail.com",
+    author_email="asyncthinking@gmail.com",
     description="Build GPT from scratch to understand how LLMs work. A hands-on series for software engineers.",
     long_description=read_readme(),
     long_description_content_type="text/markdown",

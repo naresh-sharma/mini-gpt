@@ -273,7 +273,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Connect
 
-- 📧 Email: nareshsharman@gmail.com
+- 📧 Email: asyncthinking@gmail.com
 - 🐦 Twitter: [@Naresh_Sharma_](https://x.com/Naresh_Sharma_)
 - 💼 LinkedIn: [Naresh Sharma](https://linkedin.com/in/naresh-sharma-865b3b24/)
 - 🌐 Blog: [Async Thinking](https://asyncthinking.com)
@@ -295,7 +295,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🐛 [Report issues](https://github.com/naresh-sharma/mini-gpt/issues)
 - 💡 [Request features](https://github.com/naresh-sharma/mini-gpt/issues)
 - 💬 [Join discussions](https://github.com/naresh-sharma/mini-gpt/discussions)
-- 📧 Email: nareshsharman@gmail.com
+- 📧 Email: asyncthinking@gmail.com
 - 💼 [LinkedIn](https://linkedin.com/in/naresh-sharma-865b3b24/)
 
 **Let's demystify AI together!** 🧠✨

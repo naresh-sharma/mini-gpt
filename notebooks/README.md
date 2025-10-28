@@ -162,7 +162,7 @@ Think of it as: **Code first, notebooks second** 🚀
 
 - 💬 [Start a Discussion](https://github.com/naresh-sharma/mini-gpt/discussions)
 - 🐛 [Report an Issue](https://github.com/naresh-sharma/mini-gpt/issues)
-- 📧 Email: nareshsharman@gmail.com
+- 📧 Email: asyncthinking@gmail.com
 
 ---
 
