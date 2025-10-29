@@ -1,13 +1,14 @@
 # 🧠 MiniGPT: Learn by Building
 
+[![Read the Introduction](https://img.shields.io/badge/Read-Introduction-blue)](https://asyncthinking.com/p/minigpt-learn-by-building)
 [![GitHub stars](https://img.shields.io/github/stars/naresh-sharma/mini-gpt?style=social)](https://github.com/naresh-sharma/mini-gpt)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part1_tokenization.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part1_tokenization.ipynb)
 
-> **If you can read Python, you can understand GPT** 🧠
+**A hands-on series: Build a GPT from scratch and finally understand how LLMs actually work**
 
-**MiniGPT** — a hands-on project to build and understand GPT models step by step. Build a miniature GPT from scratch to understand how Large Language Models work. This educational series is designed for software engineers who want to demystify the magic behind modern AI.
+🚀 **[Read the full introduction →](https://asyncthinking.com/p/minigpt-learn-by-building)**
 
 ## 🎯 What You'll Learn
 
@@ -42,21 +43,15 @@ You've used ChatGPT. Maybe you've even fine-tuned a model. But do you really und
 
 This series takes you from "I can use GPT" to "I understand how GPT works."
 
-## 📚 The Series
+## 📚 Series
 
-Build GPT step-by-step across 5 hands-on parts:
-
-| Part | What You'll Build | Read | Code | Status |
-|------|------------------|------|------|--------|
-| **1** | **How GPT Reads Your Words**<br>Build a tokenizer and understand why GPT can't spell | [📖 Blog →](https://asyncthinking.com) | [💻 Colab →](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part1_tokenization.ipynb) | ✅ **Live** |
-| **2** | **Turning Words into Meaning**<br>Create embeddings and visualize semantic space | [📖 Blog →](https://asyncthinking.com) | [💻 Colab →](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part2_embeddings.ipynb) | 🧠 **In Progress** |
-| **3** | **The Secret Sauce**<br>Implement attention from scratch | [📖 Blog →](https://asyncthinking.com) | [💻 Colab →](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part3_attention.ipynb) | ⏳ **Coming Soon** |
-| **4** | **From Random to Shakespeare**<br>Train your GPT on real text | [📖 Blog →](https://asyncthinking.com) | [💻 Colab →](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part4_model.ipynb) | ⏳ **Coming Soon** |
-| **5** | **Making Your GPT Talk**<br>Generate text and understand its quirks | [📖 Blog →](https://asyncthinking.com) | [💻 Colab →](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part5_training.ipynb) | ⏳ **Coming Soon** |
-
-**⏱️ Time commitment:** ~30-45 min per part • **Total:** 3-4 hours to complete
-
-**📝 Note:** Blog posts are being written on [Async Thinking](https://asyncthinking.com) and will be linked here when ready.
+- **[Introduction: Why Build MiniGPT?](https://asyncthinking.com/p/minigpt-learn-by-building)** ✅ Published
+- **Part 1: Tokenization** (Coming in 3 days)
+- Part 2: Embeddings
+- Part 3: Attention Mechanism
+- Part 4: Transformer Architecture
+- Part 5: Training and Generation
+- Part 6: Fine-tuning and Prompt Engineering
 
 **🔔 Star the repo to get notified when new parts drop!**
 
