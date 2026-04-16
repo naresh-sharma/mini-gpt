@@ -25,7 +25,7 @@ Each part takes about 2-3 hours to complete, so the full series takes about 10-1
 
 ### What Python version do I need?
 
-Python 3.8 or higher. We recommend Python 3.9+ for the best experience.
+Python 3.10 or higher. On macOS the system `python3` is typically 3.9 — use `brew install python@3.12` (or similar) and substitute `python3.12` in the venv command.
 
 ### Do I need a GPU?
 

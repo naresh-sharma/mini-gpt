@@ -4,7 +4,7 @@ Complete installation instructions for MiniGPT.
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - pip (Python package installer)
 - Git (optional, for cloning)
 
@@ -14,6 +14,8 @@ python --version
 # or
 python3 --version
 ```
+
+If this prints `3.9.x` or lower (common on macOS — system `python3` is 3.9), install a newer Python from [python.org](https://www.python.org/downloads/) or via `brew install python@3.12`, and use the explicit binary (e.g. `python3.12`) in the commands below.
 
 ---
 

@@ -5,7 +5,7 @@ Get MiniGPT running in 5 minutes!
 ## 📋 Checklist
 
 Before you start, make sure you have:
-- [ ] Python 3.8 or higher installed
+- [ ] Python 3.10 or higher installed
 - [ ] Terminal/Command Prompt access
 - [ ] 10 minutes of time
 
