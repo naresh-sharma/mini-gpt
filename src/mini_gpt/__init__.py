@@ -22,7 +22,7 @@ from .embeddings import (
 )
 from .tokenizer import BPETokenizer, SimpleTokenizer
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Naresh Sharma"
 __email__ = "asyncthinking@gmail.com"
 __description__ = "Build GPT from scratch to understand how LLMs work"

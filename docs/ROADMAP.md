@@ -6,9 +6,10 @@ working Python module in this repo.
 
 ## Current Status
 
-- **Version**: 0.1.0
+- **Version**: 0.2.0
 - **Last Updated**: 2026-04-15
-- **Series published**: Introduction + Part 1
+- **Code shipped**: Parts 1–2
+- **Blog posts published**: Introduction + Part 1 (Part 2 pending)
 
 ## Series Timeline
 
@@ -20,11 +21,13 @@ working Python module in this repo.
 - [x] Interactive notebook
 - [x] Blog post: [How GPT Reads Your Words](https://asyncthinking.com/p/how-gpt-reads-your-words-and-why)
 
-### Part 2: Embeddings (in progress)
-- [ ] Token embedding layer (`nn.Embedding` lookup)
-- [ ] Sinusoidal positional encoding
-- [ ] Visualizations (3D projections, t-SNE, `king - man + woman ≈ queen`)
-- [ ] Interactive notebook
+### Part 2: Embeddings ✅ Code shipped
+- [x] `TokenEmbedding` (pure-NumPy lookup with GPT-2 init, batched input support)
+- [x] `SinusoidalPositionalEncoding` (deterministic sin/cos, dot-product decay)
+- [x] `LearnedPositionalEmbedding` (GPT-2 style alternative, same `.encode(seq_len)` API)
+- [x] `build_input_embedding` helper (token + positional, single & batched)
+- [x] Visualizations (PCA scatter, sinusoidal heatmap, `king - man + woman ≈ queen`)
+- [x] Interactive notebook
 - [ ] Blog post
 
 ### Part 3: Attention

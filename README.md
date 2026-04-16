@@ -211,16 +211,20 @@ python examples/visualize_embeddings.py     # PCA scatter of 40 words
 ```
 mini-gpt/
 ├── 📓 notebooks/           # Interactive Jupyter notebooks (one per part as it ships)
-│   └── part1_tokenization.ipynb
+│   ├── part1_tokenization.ipynb
+│   └── part2_embeddings.ipynb
 ├── 🐍 src/mini_gpt/        # Reusable Python modules (added per part as it ships)
 │   ├── tokenizer.py
+│   ├── embeddings.py
 │   └── utils.py
 ├── 📊 data/                # Training datasets (populated when Part 4 ships)
 ├── 🧪 tests/               # Unit tests
 ├── 📚 docs/                # Additional documentation
 └── 💡 examples/            # Example scripts
-    ├── tokenizer_demo.py          # Interactive tokenizer demo
-    └── compare_with_tiktoken.py   # Compare with OpenAI's tokenizer
+    ├── tokenizer_demo.py             # Part 1: interactive tokenizer demo
+    ├── compare_with_tiktoken.py      # Part 1: compare with OpenAI's tokenizer
+    ├── embedding_demo.py             # Part 2: GloVe analogies (king - man + woman)
+    └── visualize_embeddings.py       # Part 2: PCA scatter of word clusters
 ```
 
 ## 🎯 Code Philosophy

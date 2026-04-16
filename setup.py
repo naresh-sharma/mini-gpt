@@ -28,7 +28,7 @@ def read_requirements():
 
 setup(
     name="mini-gpt",
-    version="0.1.0",
+    version="0.2.0",
     author="Naresh Sharma",
     author_email="asyncthinking@gmail.com",
     description="Build GPT from scratch to understand how LLMs work. A hands-on series for software engineers.",
