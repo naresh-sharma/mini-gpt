@@ -95,12 +95,19 @@ This series takes you from "I can use GPT" to "I understand how GPT works."
 <details>
 <summary><b>🐍 Create Virtual Environment (Click to expand)</b></summary>
 
+**First, check your Python version.** MiniGPT requires Python 3.10+:
+```bash
+python3 --version   # macOS/Linux
+python --version    # Windows
+```
+If this prints `3.9.x` or lower (common on macOS — system Python is 3.9), you'll need to install a newer Python from [python.org](https://www.python.org/downloads/) or via `brew install python@3.12`, and use the explicit binary (e.g. `python3.12`) in the commands below.
+
 **On macOS/Linux:**
 ```bash
 # Navigate to project directory
 cd mini-gpt
 
-# Create virtual environment
+# Create virtual environment (use python3.12 if system python3 is < 3.10)
 python3 -m venv venv
 
 # Activate it
@@ -114,7 +121,7 @@ source venv/bin/activate
 # Navigate to project directory
 cd mini-gpt
 
-# Create virtual environment
+# Create virtual environment (use py -3.12 if default python is < 3.10)
 python -m venv venv
 
 # Activate it
