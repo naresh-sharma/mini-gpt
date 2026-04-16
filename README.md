@@ -3,7 +3,7 @@
 [![Read the Introduction](https://img.shields.io/badge/Read-Introduction-blue)](https://asyncthinking.com/p/minigpt-learn-by-building)
 [![GitHub stars](https://img.shields.io/github/stars/naresh-sharma/mini-gpt?style=social)](https://github.com/naresh-sharma/mini-gpt)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part1_tokenization.ipynb)
 
 **A hands-on series: Build a GPT from scratch and finally understand how LLMs actually work**
@@ -226,7 +226,7 @@ mini-gpt/
 ## 📋 Prerequisites
 
 **Required:**
-- Python 3.8+ installed
+- Python 3.10+ installed
 - Basic Python knowledge (functions, classes, loops)
 - A curious mind! 🤔
 
