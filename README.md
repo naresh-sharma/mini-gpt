@@ -48,10 +48,9 @@ This series takes you from "I can use GPT" to "I understand how GPT works."
 - **[Introduction: Why Build MiniGPT?](https://asyncthinking.com/p/minigpt-learn-by-building)** ✅ Published
 - **[Part 1: Tokenization](https://asyncthinking.com/p/how-gpt-reads-your-words-and-why)** ✅ Published
 - Part 2: Embeddings
-- Part 3: Attention Mechanism
-- Part 4: Transformer Architecture
-- Part 5: Training and Generation
-- Part 6: Fine-tuning and Prompt Engineering
+- Part 3: Attention
+- Part 4: Training
+- Part 5: Generation
 
 **🔔 Star the repo to get notified when new parts drop!**
 

@@ -2,10 +2,8 @@
 Utility functions for MiniGPT Part 1: Tokenization
 
 This module provides utility functions for working with tokenizers,
-visualizing tokenization, and analyzing text efficiency.
-
-Additional utilities for training, embeddings, and model architecture
-will be added in later parts of the series.
+visualizing tokenization, and analyzing text efficiency. Later parts
+of the series will add their own utility modules as needed.
 """
 
 from pathlib import Path
