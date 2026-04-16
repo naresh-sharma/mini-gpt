@@ -84,6 +84,35 @@ class TestTokenEmbedding:
         out = emb.lookup([])
         assert out.shape == (0, 4)
 
+    def test_batched_lookup_shape(self):
+        """2D (batch, seq) input returns 3D (batch, seq, d_model)."""
+        emb = TokenEmbedding(vocab_size=20, d_model=4, seed=0)
+        batch = [[0, 1, 2], [3, 4, 5]]
+        out = emb.lookup(batch)
+        assert out.shape == (2, 3, 4)
+
+    def test_batched_lookup_matches_per_sequence(self):
+        """Batched lookup equals looking up each sequence individually."""
+        emb = TokenEmbedding(vocab_size=20, d_model=4, seed=0)
+        seq_a = [0, 1, 2]
+        seq_b = [3, 4, 5]
+        batched = emb.lookup([seq_a, seq_b])
+        assert np.array_equal(batched[0], emb.lookup(seq_a))
+        assert np.array_equal(batched[1], emb.lookup(seq_b))
+
+    def test_batched_lookup_out_of_range_raises(self):
+        """Range check works on batched input too."""
+        emb = TokenEmbedding(vocab_size=10, d_model=4, seed=0)
+        with pytest.raises(IndexError):
+            emb.lookup([[0, 1], [2, 99]])
+
+    def test_lookup_preserves_arbitrary_shape(self):
+        """Output shape is input shape + (d_model,) — true for any ndim."""
+        emb = TokenEmbedding(vocab_size=20, d_model=4, seed=0)
+        ids_3d = np.array([[[0, 1], [2, 3]], [[4, 5], [6, 7]]])  # (2, 2, 2)
+        out = emb.lookup(ids_3d)
+        assert out.shape == (2, 2, 2, 4)
+
     def test_out_of_range_id_raises(self):
         """Lookup with id >= vocab_size raises IndexError."""
         emb = TokenEmbedding(vocab_size=10, d_model=4, seed=0)
@@ -243,3 +272,44 @@ class TestBuildInputEmbedding:
         pos = SinusoidalPositionalEncoding(max_len=16, d_model=16)
         with pytest.raises(ValueError):
             build_input_embedding([1, 2], tok, pos)
+
+    def test_batched_input_shape(self):
+        """Batched (B, L) input returns (B, L, d_model)."""
+        tok = TokenEmbedding(vocab_size=50, d_model=8, seed=0)
+        pos = SinusoidalPositionalEncoding(max_len=16, d_model=8)
+        out = build_input_embedding([[5, 2, 9], [1, 8, 3]], tok, pos)
+        assert out.shape == (2, 3, 8)
+
+    def test_batched_broadcasts_positions(self):
+        """Same position vector is added to every sequence in the batch."""
+        tok = TokenEmbedding(vocab_size=50, d_model=8, seed=0)
+        pos = SinusoidalPositionalEncoding(max_len=16, d_model=8)
+        batch = [[5, 2, 9], [1, 8, 3]]
+        out = build_input_embedding(batch, tok, pos)
+        # Subtracting the token part should leave identical position
+        # vectors across the batch.
+        pos_part_a = out[0] - tok.lookup(batch[0])
+        pos_part_b = out[1] - tok.lookup(batch[1])
+        assert np.allclose(pos_part_a, pos_part_b)
+        assert np.allclose(pos_part_a, pos.encode(3))
+
+    def test_batched_matches_per_sequence(self):
+        """Batched result equals stacking per-sequence results."""
+        tok = TokenEmbedding(vocab_size=50, d_model=8, seed=0)
+        pos = LearnedPositionalEmbedding(max_len=16, d_model=8, seed=1)
+        batch = [[5, 2, 9], [1, 8, 3]]
+        batched = build_input_embedding(batch, tok, pos)
+        stacked = np.stack(
+            [
+                build_input_embedding(batch[0], tok, pos),
+                build_input_embedding(batch[1], tok, pos),
+            ]
+        )
+        assert np.array_equal(batched, stacked)
+
+    def test_scalar_input_raises(self):
+        """A bare scalar has no sequence dimension — reject it clearly."""
+        tok = TokenEmbedding(vocab_size=50, d_model=8, seed=0)
+        pos = SinusoidalPositionalEncoding(max_len=16, d_model=8)
+        with pytest.raises(ValueError):
+            build_input_embedding(5, tok, pos)

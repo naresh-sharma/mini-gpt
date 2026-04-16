@@ -52,11 +52,16 @@ class TokenEmbedding:
     space (this is the magic the Part 2 blog post demonstrates with
     pretrained GloVe embeddings).
 
+    Accepts either a single sequence of token IDs (1D) or a batch of
+    sequences (2D). The output shape is always the input shape with an
+    extra trailing d_model dimension.
+
     Example:
         >>> emb = TokenEmbedding(vocab_size=1000, d_model=64, seed=42)
-        >>> vectors = emb.lookup([5, 2, 9])
-        >>> vectors.shape
+        >>> emb.lookup([5, 2, 9]).shape          # single sequence
         (3, 64)
+        >>> emb.lookup([[5, 2, 9], [1, 8, 3]]).shape   # batch of 2 sequences
+        (2, 3, 64)
     """
 
     def __init__(
@@ -104,26 +109,32 @@ class TokenEmbedding:
         Return the embedding vectors for the given token IDs.
 
         Args:
-            token_ids: Sequence of integer IDs in range [0, vocab_size).
+            token_ids: Integer IDs in range [0, vocab_size). Accepts any
+                shape: a flat list/array of length L, or a 2D batch of
+                shape (B, L), etc.
 
         Returns:
-            Array of shape (len(token_ids), d_model). Row i is the
-            embedding for token_ids[i].
+            Array of shape ``token_ids.shape + (d_model,)``. A 1D input
+            of length L returns (L, d_model); a 2D batch (B, L) returns
+            (B, L, d_model).
 
         Example:
             >>> emb = TokenEmbedding(vocab_size=100, d_model=8, seed=0)
             >>> emb.lookup([0, 5, 99]).shape
             (3, 8)
+            >>> emb.lookup([[0, 5], [99, 1]]).shape
+            (2, 2, 8)
         """
         ids = np.asarray(token_ids, dtype=np.int64)
-        if ids.size == 0:
-            return np.zeros((0, self.d_model))
-        if ids.min() < 0 or ids.max() >= self.vocab_size:
+        # Range-check only when non-empty: ids.min/max raises on empty arrays.
+        if ids.size > 0 and (ids.min() < 0 or ids.max() >= self.vocab_size):
             raise IndexError(
                 f"token_ids must be in [0, {self.vocab_size}), got range [{ids.min()}, {ids.max()}]"
             )
-        # Fancy indexing — this is the entire lookup. torch.nn.Embedding
-        # is this same operation wrapped in autograd.
+        # Fancy indexing — this is the entire lookup. NumPy returns an
+        # array of shape ids.shape + (d_model,), so batched inputs work
+        # out of the box. torch.nn.Embedding does the same operation
+        # wrapped in autograd.
         return self._weight[ids]
 
 
@@ -301,26 +312,33 @@ def build_input_embedding(
     """
     Combine token embeddings with positional encodings.
 
-    This is what attention actually receives: a (seq_len, d_model) array
-    where each row carries both *what* the token is and *where* it sits
-    in the sequence.
+    This is what attention actually receives: each row carries both
+    *what* the token is and *where* it sits in the sequence.
+
+    Works on both single sequences and batches. For input shape
+    ``(..., seq_len)`` the output is ``(..., seq_len, d_model)``. The
+    position vectors broadcast across any leading batch dimensions —
+    every item in the batch gets the same positional encoding at
+    position i, which is what transformers want.
 
     Args:
-        token_ids: Sequence of integer token IDs.
+        token_ids: Integer token IDs, 1D (single sequence) or 2D batch.
         token_embedding: A TokenEmbedding matching the vocabulary.
         positional_encoder: Either SinusoidalPositionalEncoding or
             LearnedPositionalEmbedding. Both expose .encode(seq_len).
 
     Returns:
-        Array of shape (len(token_ids), d_model), equal to the elementwise
-        sum of the token vectors and the position vectors.
+        Array of shape ``token_ids.shape + (d_model,)``, equal to the
+        elementwise sum of the token vectors and the position vectors
+        (broadcast across batch).
 
     Example:
         >>> tok = TokenEmbedding(vocab_size=100, d_model=8, seed=0)
         >>> pos = SinusoidalPositionalEncoding(max_len=16, d_model=8)
-        >>> x = build_input_embedding([5, 2, 9], tok, pos)
-        >>> x.shape
+        >>> build_input_embedding([5, 2, 9], tok, pos).shape
         (3, 8)
+        >>> build_input_embedding([[5, 2, 9], [1, 8, 3]], tok, pos).shape
+        (2, 3, 8)
     """
     if token_embedding.d_model != positional_encoder.d_model:
         raise ValueError(
@@ -329,8 +347,18 @@ def build_input_embedding(
         )
 
     token_vectors = token_embedding.lookup(token_ids)
-    seq_len = token_vectors.shape[0]
+    # Use shape[-2] so this works for both 1D (seq, d_model) and batched
+    # (..., seq, d_model) inputs. Scalar inputs (0D) — with shape ()
+    # — aren't supported; you'd have a single ID with no sequence dim.
+    if token_vectors.ndim < 2:
+        raise ValueError(
+            "token_ids must have at least one sequence dimension "
+            f"(got shape {np.asarray(token_ids).shape})"
+        )
+    seq_len = token_vectors.shape[-2]
     position_vectors = positional_encoder.encode(seq_len)
 
-    # Elementwise sum: each row now carries identity + position.
+    # Elementwise sum with broadcasting: position_vectors is (seq, d_model)
+    # and token_vectors is (..., seq, d_model), so positions are added
+    # to every item in the batch.
     return token_vectors + position_vectors
