@@ -175,9 +175,6 @@ Try these example scripts to see MiniGPT in action:
 # Interactive tokenizer demo
 python examples/tokenizer_demo.py
 
-# Basic usage examples  
-python examples/basic_usage.py
-
 # Compare with OpenAI's tokenizer
 python examples/compare_with_tiktoken.py
 ```
