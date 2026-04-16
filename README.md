@@ -178,11 +178,13 @@ pip install mini-gpt
 Try these example scripts to see MiniGPT in action:
 
 ```bash
-# Interactive tokenizer demo
+# Part 1 — Tokenization
 python examples/tokenizer_demo.py
-
-# Compare with OpenAI's tokenizer
 python examples/compare_with_tiktoken.py
+
+# Part 2 — Embeddings (first run downloads ~65MB GloVe to ~/gensim-data/)
+python examples/embedding_demo.py           # king - man + woman = queen
+python examples/visualize_embeddings.py     # PCA scatter of 40 words
 ```
 
 ## 👥 Who Is This For?
