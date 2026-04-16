@@ -1,9 +1,14 @@
-# Runtime dependencies for Part 1 (Tokenization).
+# Runtime dependencies for MiniGPT.
 # Dev tooling (ruff, pytest, pre-commit) lives in requirements-dev.txt.
-# Additional deps (torch, matplotlib, etc.) will be added when later
-# parts need them.
 
+# --- Part 1: Tokenization ---
 numpy>=1.24.0
 jupyter>=1.0.0
 tiktoken>=0.4.0
 tqdm>=4.65.0
+
+# --- Part 2: Embeddings ---
+# Core module is pure NumPy; these are for the notebook and examples.
+torch>=2.0.0        # torch.nn.Embedding equivalence demo
+matplotlib>=3.7.0   # embedding and positional encoding visualizations
+gensim>=4.3.0       # cached pretrained GloVe download (king - man + woman demo)
