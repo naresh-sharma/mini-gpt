@@ -7,144 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- Initial project structure and documentation
-- Comprehensive README with series overview
-- Contributing guidelines and code of conduct
-- GitHub issue and PR templates
-- Basic Python module stubs for all components
-- Test framework and example tests
-- Documentation structure (FAQ, Roadmap)
-- GitHub Actions workflow for testing
-- Directory structure with placeholder files
-
 ### Changed
-- N/A
+- README, CHANGELOG, and ROADMAP updated to reflect Part 1 shipped status.
 
-### Deprecated
-- N/A
+## [0.1.0] - 2025-10-27
 
-### Removed
-- N/A
-
-### Fixed
-- N/A
-
-### Security
-- N/A
-
-## [0.1.0] - 2025-01-XX
+Initial public release. Part 1 of the MiniGPT learning series.
 
 ### Added
-- Initial release structure
-- Project documentation
-- Basic module stubs
-- Test framework
-- CI/CD pipeline
-- Contributing guidelines
+- `SimpleTokenizer`: dictionary-based tokenizer with greedy longest-match encoding.
+- `BPETokenizer`: educational Byte-Pair Encoding implementation (train, encode, decode, save/load).
+- `CharacterTokenizer`: character-level tokenizer for baseline comparison.
+- Tokenization utilities: visualization, tokenizer comparison, efficiency analysis, the "strawberry problem" demo.
+- Sample vocabularies (`simple`, `english`, `code`) via `load_sample_vocab()`.
+- `notebooks/part1_tokenization.ipynb`: interactive walkthrough.
+- Example scripts: `tokenizer_demo.py`, `compare_with_tiktoken.py`.
+- Test suite covering all tokenizers and utilities.
+- GitHub Actions CI (tests + ruff).
+- Contributing guide, code of conduct, issue and PR templates.
+
+### Related
+- Introduction post: [Introducing MiniGPT: Learn How LLMs Work by Building One](https://asyncthinking.com/p/minigpt-learn-by-building) (2025-10-28)
+- Part 1 blog post: [How GPT Reads Your Words (And Why It Can't Count Letters)](https://asyncthinking.com/p/how-gpt-reads-your-words-and-why) (2025-11-24)
 
 ---
 
-## Version History
+## Upcoming
 
-### v0.1.0 (Planned)
-- **Status**: 🚧 In Development
-- **Focus**: Project setup and documentation
-- **Target**: January 2025
+- **v0.2.0** — Part 2: Embeddings (token embeddings, positional encoding, visualization).
+- **v0.3.0** — Part 3: Attention (scaled dot-product, multi-head, causal self-attention).
+- **v0.4.0** — Part 4: Training (loss, optimization, training loop on tiny Shakespeare).
+- **v0.5.0** — Part 5: Generation (sampling strategies, temperature, top-k, top-p).
 
-### v0.2.0 (Planned)
-- **Status**: 📅 Planned
-- **Focus**: Part 1 - Tokenization
-- **Target**: February 2025
-
-### v0.3.0 (Planned)
-- **Status**: 📅 Planned
-- **Focus**: Part 2 - Embeddings
-- **Target**: March 2025
-
-### v0.4.0 (Planned)
-- **Status**: 📅 Planned
-- **Focus**: Part 3 - Attention
-- **Target**: April 2025
-
-### v0.5.0 (Planned)
-- **Status**: 📅 Planned
-- **Focus**: Part 4 - Model Architecture
-- **Target**: May 2025
-
-### v0.6.0 (Planned)
-- **Status**: 📅 Planned
-- **Focus**: Part 5 - Training & Generation
-- **Target**: June 2025
+See [docs/ROADMAP.md](docs/ROADMAP.md) for details.
 
 ---
 
-## Release Notes
+## Contributing to the Changelog
 
-### v0.1.0 - Initial Release
-
-This is the initial release of MiniGPT, setting up the foundation for the educational series.
-
-**What's Included:**
-- Complete project structure
-- Comprehensive documentation
-- Module stubs for all components
-- Test framework
-- CI/CD pipeline
-- Contributing guidelines
-
-**What's Coming:**
-- Part 1: Tokenization implementation
-- Interactive Jupyter notebooks
-- Blog post series
-- Community features
-
-**Getting Started:**
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Install in development mode: `pip install -e .`
-4. Check out the notebooks (coming soon!)
-
----
-
-## Contributing to Changelog
-
-When making changes, please update this changelog by:
-
-1. Adding your changes to the `[Unreleased]` section
-2. Using the appropriate category (Added, Changed, Deprecated, Removed, Fixed, Security)
-3. Following the format: `- Brief description of change`
-4. Moving changes to version sections when releasing
-
-### Categories
-
-- **Added**: New features
-- **Changed**: Changes to existing functionality
-- **Deprecated**: Soon-to-be removed features
-- **Removed**: Removed features
-- **Fixed**: Bug fixes
-- **Security**: Security improvements
-
-### Format
-
-```markdown
-## [Version] - YYYY-MM-DD
-
-### Added
-- New feature description
-
-### Changed
-- Change description
-
-### Fixed
-- Bug fix description
-```
-
----
-
-**Legend:**
-- 🚧 In Development
-- 📅 Planned
-- ✅ Completed
-- ❌ Cancelled
-- 🔄 In Review
+When making changes, add them to the `[Unreleased]` section under the appropriate category:
+`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, or `Security`. When a release
+is cut, move those entries under a new version heading with the release date.

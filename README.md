@@ -46,7 +46,7 @@ This series takes you from "I can use GPT" to "I understand how GPT works."
 ## 📚 Series
 
 - **[Introduction: Why Build MiniGPT?](https://asyncthinking.com/p/minigpt-learn-by-building)** ✅ Published
-- **Part 1: Tokenization** (Coming in 3 days)
+- **[Part 1: Tokenization](https://asyncthinking.com/p/how-gpt-reads-your-words-and-why)** ✅ Published
 - Part 2: Embeddings
 - Part 3: Attention Mechanism
 - Part 4: Transformer Architecture
@@ -205,28 +205,17 @@ python examples/compare_with_tiktoken.py
 
 ```
 mini-gpt/
-├── 📓 notebooks/           # Interactive Jupyter notebooks
-│   ├── part1_tokenization.ipynb
-│   ├── part2_embeddings.ipynb
-│   ├── part3_attention.ipynb
-│   ├── part4_model.ipynb
-│   └── part5_training.ipynb
-├── 🐍 src/mini_gpt/        # Reusable Python modules
+├── 📓 notebooks/           # Interactive Jupyter notebooks (one per part as it ships)
+│   └── part1_tokenization.ipynb
+├── 🐍 src/mini_gpt/        # Reusable Python modules (added per part as it ships)
 │   ├── tokenizer.py
-│   ├── embeddings.py
-│   ├── attention.py
-│   ├── model.py
-│   ├── trainer.py
-│   └── generator.py
-├── 📊 data/                # Training datasets
-│   └── tiny_shakespeare.txt
-├── 🎨 visuals/             # Diagrams and visualizations
+│   └── utils.py
+├── 📊 data/                # Training datasets (populated when Part 4 ships)
 ├── 🧪 tests/               # Unit tests
 ├── 📚 docs/                # Additional documentation
 └── 💡 examples/            # Example scripts
-    ├── tokenizer_demo.py   # Interactive tokenizer demo
-    ├── basic_usage.py      # Simple usage examples
-    └── compare_with_tiktoken.py  # Compare with OpenAI's tokenizer
+    ├── tokenizer_demo.py          # Interactive tokenizer demo
+    └── compare_with_tiktoken.py   # Compare with OpenAI's tokenizer
 ```
 
 ## 🎯 Code Philosophy
@@ -278,7 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Three ways to begin:**
 
 1. **🔥 Jump right in** → [Open Part 1 in Colab](https://colab.research.google.com/github/naresh-sharma/mini-gpt/blob/main/notebooks/part1_tokenization.ipynb) (no setup required)
-2. **📖 Read first** → [Async Thinking Blog](https://asyncthinking.com) (blog posts coming soon)
+2. **📖 Read first** → [Async Thinking Blog](https://asyncthinking.com)
 3. **⭐ Star the repo** → Get notified when new parts drop
 
 **Time investment:** ~30-45 minutes per part. By the end, you'll have built a working GPT!
